@@ -1,116 +1,227 @@
-import { Card } from "@/components/ui/card";
+import React from 'react';
+import { ChevronRight, Cpu, Leaf, Zap, Globe, Factory, Recycle, Target, Award } from 'lucide-react';
 
-interface TimelineEvent {
-  year: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-}
-
-const timelineData: TimelineEvent[] = [
+const timelineData = [
   {
-    year: "1968",
-    title: "Intel Founded",
-    description: "Robert Noyce and Gordon Moore rename the newly formed company NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation.",
-    imageUrl: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=400&q=80"
+    year: '1968',
+    title: 'Intel Founded',
+    description: 'Robert Noyce and Gordon Moore establish Intel with a vision to create semiconductor memory products.',
+    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=250&fit=crop',
+    icon: Factory
   },
   {
-    year: "1971",
-    title: "First Microprocessor",
-    description: "Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution and propelling the future of computing devices.",
-    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80"
+    year: '1971',
+    title: 'First Microprocessor',
+    description: 'Intel 4004, the world\'s first commercially available microprocessor, revolutionizes computing.',
+    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=250&fit=crop',
+    icon: Cpu
   },
   {
-    year: "1978",
-    title: "8086 Processor",
-    description: "Launch of the 8086 processor, establishing the x86 architecture that drives countless PCs and servers in the modern era.",
-    imageUrl: "https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&fit=crop&w=400&q=80"
+    year: '1993',
+    title: 'Environmental Leadership',
+    description: 'Intel becomes the first semiconductor company to eliminate ozone-depleting substances from manufacturing.',
+    image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop',
+    icon: Leaf
   },
   {
-    year: "1985",
-    title: "386 Processor",
-    description: "Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.",
-    imageUrl: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=400&q=80"
+    year: '2008',
+    title: 'Green Building Initiative',
+    description: 'Intel invests $100M in green building technologies and sustainable facility design.',
+    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=400&h=250&fit=crop',
+    icon: Factory
   },
   {
-    year: "2006",
-    title: "Peak GHG Emissions",
-    description: "This year marks Intel's highest annual greenhouse gas emissions for operations. Over subsequent years, Intel invests heavily in chemical abatement, renewable energy, and energy-efficient manufacturing to reverse this trend.",
-    imageUrl: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+    year: '2012',
+    title: 'Renewable Energy',
+    description: 'Intel becomes the largest voluntary purchaser of green power in the US EPA Green Power Partnership.',
+    image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=250&fit=crop',
+    icon: Zap
   },
   {
-    year: "2020",
-    title: "RISE Strategy",
-    description: "Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals, aiming to drive industry-wide progress on climate action, water stewardship, and waste reduction.",
-    imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+    year: '2018',
+    title: 'Carbon Neutral Manufacturing',
+    description: 'Intel achieves carbon neutral manufacturing and sets ambitious 2030 sustainability goals.',
+    image: 'https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?w=400&h=250&fit=crop',
+    icon: Globe
   },
   {
-    year: "2022",
-    title: "Net-Zero By 2040",
-    description: "Intel announces its commitment to achieve net-zero greenhouse gas emissions (Scope 1 and 2) across its global operations by 2040, building on years of environmental initiatives.",
-    imageUrl: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
+    year: '2020',
+    title: 'Circular Economy',
+    description: 'Intel launches comprehensive circular economy initiatives, including waste reduction and material reuse programs.',
+    image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&h=250&fit=crop',
+    icon: Recycle
   },
   {
-    year: "2023",
-    title: "Renewable Electricity",
-    description: "The company achieves 99% renewable electricity usage worldwide, helping to drastically lower carbon emissions and driving progress toward Intel's long-term sustainability goals.",
-    imageUrl: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+    year: '2022',
+    title: 'Net-Zero Commitment',
+    description: 'Intel commits to net-zero greenhouse gas emissions across global operations by 2040.',
+    image: 'https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?w=400&h=250&fit=crop',
+    icon: Target
   },
   {
-    year: "2024",
-    title: "Sustainability Summit",
-    description: "Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing.",
-    imageUrl: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+    year: '2024',
+    title: 'Sustainability Leadership',
+    description: 'Intel continues to lead the industry in sustainable technology innovation and environmental stewardship.',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop',
+    icon: Award
   }
 ];
 
+const SubscriptionForm = () => {
+  const [email, setEmail] = React.useState('');
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 3000);
+  };
+
+  return (
+    <section className="py-16 px-4 bg-card" role="complementary" aria-labelledby="subscription-heading">
+      <div className="max-w-2xl mx-auto text-center">
+        <h2 id="subscription-heading" className="text-3xl font-bold text-card-foreground mb-4">
+          Stay Updated on Intel's Sustainability Journey
+        </h2>
+        <p className="text-muted-foreground mb-8">
+          Subscribe to receive the latest updates on our environmental initiatives and sustainable technology innovations.
+        </p>
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <label htmlFor="email-input" className="sr-only">Email address</label>
+          <input
+            id="email-input"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email address"
+            required
+            aria-describedby="email-description"
+            className="flex-1 px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+          <div id="email-description" className="sr-only">
+            We'll send you updates about Intel's sustainability initiatives
+          </div>
+          <button
+            type="submit"
+            className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          >
+            {isSubmitted ? 'Subscribed!' : 'Subscribe'}
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className="bg-primary text-primary-foreground py-8 px-4" role="contentinfo">
+      <div className="max-w-6xl mx-auto text-center">
+        <p className="text-sm opacity-80">
+          © 2024 Intel Corporation. All rights reserved. | 
+          <a href="#" className="hover:underline ml-1 focus:outline-none focus:ring-2 focus:ring-primary-foreground focus:ring-offset-2 focus:ring-offset-primary rounded">Privacy Policy</a> | 
+          <a href="#" className="hover:underline ml-1 focus:outline-none focus:ring-2 focus:ring-primary-foreground focus:ring-offset-2 focus:ring-offset-primary rounded">Terms of Service</a>
+        </p>
+      </div>
+    </footer>
+  );
+};
+
 export const Timeline = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-slate-50">
+    <div className="min-h-screen rtl:text-right" style={{background: 'var(--intel-gradient)'}} dir="auto">
       {/* Header */}
-      <header className="bg-primary text-primary-foreground py-12 px-4 text-center shadow-sm">
-        <div className="max-w-4xl mx-auto">
-          <div className="w-32 h-12 bg-primary-foreground/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <span className="text-lg font-bold">Intel</span>
-          </div>
-          <h1 className="text-4xl font-bold mb-4">Sustainability Through the Ages</h1>
-          <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-            Explore Intel's journey through time, discovering how our commitment
-            to innovation has shaped a more sustainable future for technology 
-            and our planet.
-          </p>
-        </div>
+      <header className="text-center py-12 px-4" role="banner">
+        <h1 className="text-5xl font-bold text-primary mb-4 flex items-center justify-center gap-3">
+          <Leaf className="w-12 h-12" aria-hidden="true" />
+          Sustainability Through the Ages
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          Explore Intel's journey towards environmental responsibility and sustainable innovation
+        </p>
       </header>
 
       {/* Timeline */}
-      <section className="py-8">
-        <div className="flex flex-col md:flex-row md:overflow-x-auto gap-6 px-4 pb-4 md:scroll-smooth md:snap-x md:snap-mandatory">
-          {timelineData.map((event, index) => (
-            <Card key={index} className="flex-shrink-0 w-full md:w-80 bg-card border-2 border-blue-100 hover:border-primary hover:shadow-xl transition-all duration-300 md:snap-start">
-              <div className="p-6 flex flex-col items-center text-center h-full">
-                <img 
-                  src={event.imageUrl} 
-                  alt={event.title}
-                  className="w-full h-40 object-cover rounded-lg mb-4 shadow-sm"
-                />
-                <time className="text-primary font-semibold text-sm mb-2 tracking-wide">
-                  {event.year}
-                </time>
-                <h3 className="text-xl font-semibold text-primary mb-3">
-                  {event.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm flex-grow">
-                  {event.description}
-                </p>
-              </div>
-            </Card>
-          ))}
+      <main className="pb-16" role="main">
+        {/* Desktop Timeline */}
+        <div className="hidden lg:block px-8">
+          <div className="overflow-x-auto" role="region" aria-label="Timeline of Intel sustainability milestones">
+            <div className="flex gap-8 pb-8" style={{minWidth: 'max-content'}}>
+              {timelineData.map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <article key={index} className="flex-shrink-0 w-80">
+                    <div className="bg-card rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                      <img 
+                        src={item.image} 
+                        alt={`Visual representation of ${item.title} from ${item.year}`}
+                        className="w-full h-48 object-cover rounded-t-xl"
+                        loading="lazy"
+                      />
+                      <div className="p-6">
+                        <div className="text-primary font-bold text-xl mb-2 flex items-center gap-2">
+                          <IconComponent className="w-5 h-5" aria-hidden="true" />
+                          <time dateTime={item.year}>{item.year}</time>
+                        </div>
+                        <h3 className="text-xl font-semibold text-card-foreground mb-3">
+                          {item.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed mb-4">{item.description}</p>
+                        <button 
+                          className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1"
+                          aria-label={`Learn more about ${item.title}`}
+                        >
+                          Learn More
+                          <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
         </div>
-        
-        <p className="text-center text-primary font-medium mt-6 px-4">
-          Scroll to view timeline &nbsp;|&nbsp; Hover over cards to learn more!
-        </p>
-      </section>
+
+        {/* Mobile Timeline */}
+        <div className="lg:hidden px-4">
+          <div className="space-y-8" role="region" aria-label="Timeline of Intel sustainability milestones">
+            {timelineData.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <article key={index} className="bg-card rounded-xl shadow-lg">
+                  <img 
+                    src={item.image} 
+                    alt={`Visual representation of ${item.title} from ${item.year}`}
+                    className="w-full h-48 object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-6">
+                    <div className="text-primary font-bold text-xl mb-2 flex items-center gap-2">
+                      <IconComponent className="w-5 h-5" aria-hidden="true" />
+                      <time dateTime={item.year}>{item.year}</time>
+                    </div>
+                    <h3 className="text-xl font-semibold text-card-foreground mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed mb-4">{item.description}</p>
+                    <button 
+                      className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1"
+                      aria-label={`Learn more about ${item.title}`}
+                    >
+                      Learn More
+                      <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                    </button>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </main>
+      
+      <SubscriptionForm />
+      <Footer />
     </div>
   );
 };
