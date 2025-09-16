@@ -20,7 +20,7 @@ const timelineData = [
     year: '1993',
     title: 'Environmental Leadership',
     description: 'Intel becomes the first semiconductor company to eliminate ozone-depleting substances from manufacturing.',
-    image: 'https://images.unsplash.com/photo-1574263867128-7e03f3c4d65c?w=400&h=250&fit=crop&auto=format',
+    image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop&auto=format',
     icon: Leaf
   },
   {
@@ -41,7 +41,7 @@ const timelineData = [
     year: '2018',
     title: 'Carbon Neutral Manufacturing',
     description: 'Intel achieves carbon neutral manufacturing and sets ambitious 2030 sustainability goals.',
-    image: 'https://images.unsplash.com/photo-1565618749003-eb9f58f6a1e4?w=400&h=250&fit=crop&auto=format',
+    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=250&fit=crop&auto=format',
     icon: Globe
   },
   {
